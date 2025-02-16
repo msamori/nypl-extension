@@ -1,12 +1,3 @@
-// Get the current page URL
-const url = window.location.href;
-
-if (url.includes("goodreads.com")) {
-    addGoodreadsButton();
-} else if (url.includes("amazon.com")) {
-    addAmazonButton();
-}
-
 function addGoodreadsButton() {
     let buttonDiv = document.getElementsByClassName("BookActions")[0];
     let shopButton = buttonDiv.children[1]; // Place the button before this
@@ -31,3 +22,4 @@ function addGoodreadsButton() {
     buttonDiv.insertBefore(button, shopButton);
 }
 
+addGoodreadsButton();

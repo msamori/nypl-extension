@@ -2,13 +2,13 @@
   "manifest_version": 3,
   "name": "NYPL Button",
   "version": "0.1.0",
-  "description": "Adds a button to Goodreads book pages that searches for that item at the NYPL catalog page.",
+  "description": "Adds a button to book pages; clicking searchs for that book in the NYPL catalog page.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["https://www.goodreads.com/*", "https://www.amazon.com/*"],
   "content_scripts": [
     {
       "matches": ["*://www.goodreads.com/book/show/*"],
-      "js": ["content.js"],
+      "js": ["goodreads.js"],
       "run_at":"document_end"
     }
   ]
