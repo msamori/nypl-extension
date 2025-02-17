@@ -1,5 +1,5 @@
-This browser extension adds a button to a website describing a book.
-Clicking the button opens a new tab which searchers for that book at the NYPL.
+This browser extension adds a link to the NYPL to web page describing a book.
+The link opens a new tab to a search for that book in the NYPL catalog.
 Eventually we would like to support a few sites (Goodreads, Amazon, Barnes & Noble, etc)
 
 Known issues & edge cases

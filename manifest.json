@@ -2,18 +2,18 @@
   "manifest_version": 3,
   "name": "NYPL Button",
   "version": "0.1.0",
-  "description": "Adds a button to book pages; clicking searchs for that book in the NYPL catalog page.",
+  "description": "On pages describing a book, this adds a link to search for that book at the NYPL.",
   "permissions": ["activeTab", "scripting", "storage"],
   "host_permissions": ["https://www.goodreads.com/*", "https://www.barnesandnoble.com/*"],
   "content_scripts": [
     {
       "matches": ["*://www.goodreads.com/book/show/*"],
-      "js": ["goodreads.js"],
+      "js": ["link.js", "goodreads.js"],
       "run_at":"document_end"
     },
     {
       "matches": ["*://www.barnesandnoble.com/w/*"],
-      "js": ["barnesandnoble.js"],
+      "js": ["link.js", "barnesandnoble.js"],
       "run_at":"document_end"
     }
   ]

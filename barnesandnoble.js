@@ -1,24 +1,16 @@
-function addBarnesButton() {
-    console.log("triggered Barnes extension");
+function addBarnesLink() {
     let productName = document.getElementById("productName");
+    let title = productName.value.trim();
     let format = document.getElementById("pdp-info-format");
 
-    let title = productName.value.trim();
+    // Prevent duplicate links
+    if (document.getElementById("nyplLink")) return;
 
-    // Create button
-    let button = document.createElement("button");
-    button.id = "nyplButton";
-    button.type = "button";
-    button.innerText = "NYPL";
-    button.disabled = false; 
-    button.onclick = () => {
-        let searchUrl = `https://borrow.nypl.org/search?query=${encodeURIComponent(title)}`;
-        window.open(searchUrl, "_blank");
-    };
+    // Create link 
+    let link = createLibraryLink(title);
 
-    format.appendChild(button);
-
+    format.appendChild(link);
 }
 
-addBarnesButton();
+addBarnesLink();
 

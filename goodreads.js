@@ -1,13 +1,13 @@
-function addGoodreadsButton() {
+function addGoodreadsLink() {
     let buttonDiv = document.getElementsByClassName("BookActions")[0];
-    let shopButton = buttonDiv.children[1]; // Place the button before this
+    let shopButton = buttonDiv.children[1]; 
     let titleElement = document.querySelector("h1[data-testid='bookTitle']");
     let title = titleElement.innerText.trim();
 
-    // Prevent duplicate buttons
-    if (document.getElementById("nyplButton")) return;
+    // Prevent duplicate links
+    if (document.getElementById("nyplLink")) return;
 
-    // Create button container
+    // Create containers
     let buttonActions = document.createElement("div");
     buttonActions.className = "BookActions__button";
 
@@ -17,31 +17,16 @@ function addGoodreadsButton() {
     let buttonContainer = document.createElement("div");
     buttonContainer.className = "Button__container Button__container--block";
 
-    // Create button
-    let button = document.createElement("button");
-    button.id = "nyplButton";
-    button.type = "button";
-    button.className = "Button Button--wtr Button--medium Button--block";
-    button.disabled = false; 
-    button.onclick = () => {
-        let searchUrl = `https://borrow.nypl.org/search?query=${encodeURIComponent(title)}`;
-        window.open(searchUrl, "_blank");
-    };
-
-    // Create button label span
-    let buttonLabel = document.createElement("span");
-    buttonLabel.className = "Button__labelItem";
-    buttonLabel.innerText = "NYPL";
+    // Create link
+    let link = createLibraryLink(title);
+    link.className = "Button Button--wtr Button--medium Button--block";
 
     // Append elements 
 
-    button.appendChild(buttonLabel);
-    buttonContainer.appendChild(button);
+    buttonContainer.appendChild(link);
     buttonGroup.appendChild(buttonContainer);
     buttonActions.appendChild(buttonGroup);
-
-    // Insert the button right away
     buttonDiv.insertBefore(buttonActions, shopButton);
 }
 
-addGoodreadsButton();
+addGoodreadsLink();
