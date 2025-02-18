@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "NYPL Button",
+  "name": "NYPL Link",
   "version": "0.1.0",
   "description": "On pages describing a book, this adds a link to search for that book at the NYPL.",
   "permissions": ["activeTab", "scripting", "storage"],
@@ -18,4 +18,5 @@
     }
   ]
 }
+
 
